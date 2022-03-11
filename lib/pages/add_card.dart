@@ -57,7 +57,7 @@ class _AddCardState extends State<AddCard> {
   getResponse(String? response){
     if(response != null){
       Log.i(response);
-      Navigator.pop(context);
+      Navigator.pop(context,true);
     }
   }
 
@@ -65,6 +65,9 @@ class _AddCardState extends State<AddCard> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        leading: IconButton(onPressed: (){
+          saveCard();
+        }, icon: Icon(Icons.arrow_back)),
         elevation: 0,
         backgroundColor: Colors.blue.shade900,
         title: Text('Add your card'),
